@@ -1,26 +1,25 @@
 <!--  -->
 <template>
   <section class="order">
-    <header class="header">
-      <a class="header_title">
-        <span class="header_title_text">订单列表</span>
-      </a>
-    </header>
+    <head-top title="订单列表"></head-top>
     <section class="order_no_login">
       <img src="./images/order/person.png">
       <h3>登录后查看外卖订单</h3>
-      <button>立即登陆</button>
+      <router-link to="toLogin" class="buttons">立即登陆</router-link>
     </section>
   </section>
 </template>
 
 <script>
+import HeadTop from '../../components/HeadTop/HeadTop.vue'
 export default {
   data() {
     return {};
   },
 
-  components: {},
+  components: {
+    HeadTop
+  },
 
   computed: {},
 
@@ -29,15 +28,8 @@ export default {
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl';
-        .header //头部公共css
-          background-color #02a774
-          position fixed
-          z-index 100
-          left 0
-          top 0
-          width 100%
-          height 45px
-.order { // 订单
+
+  .order { // 订单
   width: 100%;
 
   .order_no_login {
@@ -58,7 +50,7 @@ export default {
       color: #6a6a6a;
     }
 
-    >button {
+    .buttons {
       display: inline-block;
       background: #02a774;
       font-size: 14px;
